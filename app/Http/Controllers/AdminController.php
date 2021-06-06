@@ -2,35 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Models\Anggota;
+use App\Models\Pelatih;
 
 class AdminController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {        
         return view('admin-views.dashboard');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function daftarAnggota($usia)
+    {
+        $data = Anggota::where('kelompokUsia', $usia)->orderBy('id', 'DESC')->get();
+        
+        return view('admin-views.daftar-anggota',['usia' => $usia, 'data' => $data]);
+        // return view('page.muzakki.index', );
+    }
+
+    public function pelatih()
+    {
+        $data = Pelatih::orderBy('id', 'DESC')->get();
+
+        return view('admin-views.pelatih-tambah', ['data' => $data]);
+
+    }
+
     public function create()
     {
         //

@@ -30,8 +30,10 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // ADMIN ROUTE
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {    
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('is_admin');
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin'], function () {    
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/anggota/{usia}', [AdminController::class, 'daftarAnggota'])->name('anggota');
+    Route::get('/pelatih', [AdminController::class, 'pelatih'])->name('pelatih');
 
 });
 

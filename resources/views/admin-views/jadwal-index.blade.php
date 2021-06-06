@@ -1,7 +1,7 @@
 @extends('layouts.admin')
    
 @section('content-admin')
-<div class="mt-n4 mb-4">
+<div class="mt-4 mb-4">
     <a class="btn btn-primary" href={{route('admin.anggota',12)}} role="button">Usia 12 Tahun</a>
     <a class="btn btn-primary" href={{route('admin.anggota',15)}} role="button">Usia 15 Tahun</a>
     <a class="btn btn-primary" href={{route('admin.anggota',17)}} role="button">Usia 17 Tahun</a>    

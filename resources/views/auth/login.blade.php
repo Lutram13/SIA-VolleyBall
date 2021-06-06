@@ -58,6 +58,8 @@
 <body class="text-center">
 
     <main class="form-signin">
+        <img src="/images/PBV TUNAS BANYUMANIK.jpg" class="rounded mx-auto d-block" alt="logo" style="width:200px;heigth:200px">
+
         <form method="POST" action="{{ route('login') }}">
             <h1 class="h3 mb-3 fw-normal">Silahkan Login</h1>
 
