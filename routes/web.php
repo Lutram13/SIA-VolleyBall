@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin']
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/anggota/{usia}', [AdminController::class, 'daftarAnggota'])->name('anggota');
     Route::get('/pelatih', [AdminController::class, 'pelatih'])->name('pelatih');
+    Route::get('/pelatih/tambah', [AdminController::class, 'pelatihTambah'])->name('pelatih.tambah');
+
 
 });
 

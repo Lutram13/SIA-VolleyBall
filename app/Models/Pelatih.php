@@ -15,6 +15,7 @@ class Pelatih extends Model
         'nomorTelepon', 
         'tempatLahir',
         'tanggalLahir',
+        'kelompokUsia',
         'image',    
     ];
 }

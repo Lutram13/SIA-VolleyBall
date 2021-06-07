@@ -9,7 +9,7 @@
 
 <div class="card">
     <div class="card-header">
-        Daftar Anggota Usia <strong>{{$usia}} Tahun</strong> Klub Bola Voli Tunas
+        <h5>Daftar Anggota Usia <strong>{{$usia}} Tahun</strong> Klub Bola Voli Tunas</h5>
     </div>
     <div class="card-body">
         <table class="table">

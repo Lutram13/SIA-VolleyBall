@@ -1,12 +1,6 @@
 @extends('layouts.admin')
    
 @section('content-admin')
-<div class="mt-4 mb-4">
-    <a class="btn btn-primary" href={{route('admin.anggota',12)}} role="button">Usia 12 Tahun</a>
-    <a class="btn btn-primary" href={{route('admin.anggota',15)}} role="button">Usia 15 Tahun</a>
-    <a class="btn btn-primary" href={{route('admin.anggota',17)}} role="button">Usia 17 Tahun</a>    
-</div>
-
 <div class="card">
     <div class="card-header">
         Daftar Anggota Usia <strong>{{$usia}} Tahun</strong> Klub Bola Voli Tunas

@@ -32,8 +32,13 @@ class AdminController extends Controller
     {
         $data = Pelatih::orderBy('id', 'DESC')->get();
 
-        return view('admin-views.pelatih-tambah', ['data' => $data]);
+        return view('admin-views.pelatih-index', ['data' => $data]);
 
+    }
+
+    public function pelatihTambah()
+    {
+        return view('admin-views.pelatih-tambah');
     }
 
     public function create()

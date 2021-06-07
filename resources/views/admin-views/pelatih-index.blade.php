@@ -1,45 +1,65 @@
 @extends('layouts.admin')
    
 @section('content-admin')
-<div class="mt-4 mb-4">
-    <a class="btn btn-primary" href={{route('admin.anggota',12)}} role="button">Usia 12 Tahun</a>
-    <a class="btn btn-primary" href={{route('admin.anggota',15)}} role="button">Usia 15 Tahun</a>
-    <a class="btn btn-primary" href={{route('admin.anggota',17)}} role="button">Usia 17 Tahun</a>    
-</div>
-
 <div class="card">
     <div class="card-header">
-        Daftar Anggota Usia <strong>{{$usia}} Tahun</strong> Klub Bola Voli Tunas
+        <div class="row">
+            <div class="col-md-10">
+                <h5>Daftar Data Pelatih</h5>
+            </div>
+            <div class="col-md-2 d-md-flex justify-content-md-end btn-sm">
+                <a href={{route('admin.pelatih.tambah')}} class="btn btn-primary" role="button">Tambah Pelatih</a>
+            </div>
+        </div>
+        
     </div>
-    <div class="card-body">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Tempat, Tanggal Lahir</th>
-                <th scope="col">Kelompok Usia</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php $nomor=1 ?>
-                @foreach ($data as $anggota)
-                    <tr>
-                    <th scope="row">{{$nomor}}</th>
-                    <td>{{$anggota->nama}}</td>
-                    <td>{{$anggota->alamat}}</td>
-                    <?php 
-                        $tanggalLahir = DateTime::createFromFormat('Y-m-d', $anggota->tanggalLahir);
-                        $formattanggalLahir = $tanggalLahir->format('d M Y');
-                    ?>
-                    <td>{{$anggota->tempatLahir}}, {{$formattanggalLahir}}</td>
-                    <td>{{$anggota->kelompokUsia}} Tahun</td>
-                    </tr>                         
-                    <?php $nomor++ ?>               
-                @endforeach              
-            </tbody>
-          </table>
+    <div class="card-body" >
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach ($data as $pelatih)
+                <div class="col">
+                    <div class="card h-100">                    
+                        <div class="card-header text-center">
+                            Pelatih Usia {{$pelatih->kelompokUsia}} Tahun
+                        </div>
+                        <div class="croping rounded mx-auto d-block mt-2">
+                            <img src="/images/pelatih/{{$pelatih->image}}" class="" alt="photo">                            
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{$pelatih->namaPelatih}}</h5>
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th>Alamat</th>
+                                    <td>:</td>
+                                    <td>{{$pelatih->alamat}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>No.Telepon</th>
+                                    <td>:</td>
+                                    <td>{{$pelatih->nomorTelepon}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>TTL</th>
+                                    <td>:</td>
+                                    <?php 
+                                        $tanggalLahir = DateTime::createFromFormat('Y-m-d', $pelatih->tanggalLahir);
+                                        $formattanggalLahir = $tanggalLahir->format('d M Y');
+                                    ?>
+                                    <td>{{$pelatih->tempatLahir}}, {{$formattanggalLahir}}</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
+                            </div>
+                        </div>
+                    </div>       
+                </div>             
+            @endforeach
+
+
+        </div>
     </div>
 </div>
 

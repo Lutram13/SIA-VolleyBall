@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#">Jadwal Latihan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Daftar Nama Pelatih</a>
+                        <a class="nav-link" href={{route('admin.pelatih')}}>Daftar Nama Pelatih</a>
                     </li>
                     </li>
                     <li class="nav-item">
