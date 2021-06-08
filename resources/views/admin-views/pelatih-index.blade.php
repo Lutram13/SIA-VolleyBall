@@ -1,6 +1,25 @@
 @extends('layouts.admin')
    
 @section('content-admin')
+
+    @if ($message = Session::get('sukses'))
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        {{$message}}  
+    </div>
+    @endif
+
+    @if ($message = Session::get('gagal'))    
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        {{$message}}
+    </div>
+    @endif
+
+    @if ($message = Session::get('peringatan'))  
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        {{$message}}     
+    </div>
+    @endif
+
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -50,8 +69,14 @@
                                 </tbody>
                             </table>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
+                                <a href={{route('admin.pelatih.edit',$pelatih->id)}} class="btn btn-primary btn-sm" role="button">Edit</a>
+                                
+                                <form action="{{ route('admin.pelatih.destroy',$pelatih->id) }}" method="POST">              
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-secondary btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data pelatih {{$pelatih->namaPelatih}} ?')">Hapus</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>       

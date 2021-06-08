@@ -35,6 +35,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin']
     Route::get('/anggota/{usia}', [AdminController::class, 'daftarAnggota'])->name('anggota');
     Route::get('/pelatih', [AdminController::class, 'pelatih'])->name('pelatih');
     Route::get('/pelatih/tambah', [AdminController::class, 'pelatihTambah'])->name('pelatih.tambah');
+    Route::post('/pelatih/store', [AdminController::class, 'pelatihStore'])->name('pelatih.store');
+    Route::get('/pelatih/edit/{pesanan}', [AdminController::class, 'pelatihEdit'])->name('pelatih.edit');  
+    Route::put('/pelatih/edit/{pesanan}', [AdminController::class, 'pelatihUpdate'])->name('pelatih.update');  
+    Route::delete('/pelatih/delete/{pesanan}', [AdminController::class, 'pelatihDestroy'])->name('pelatih.destroy');  
 
 
 });
