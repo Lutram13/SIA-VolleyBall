@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
         
         $this->call(CreateUsersSeeder::class);
         $this->call(CreatePelatihsSeeder::class);
+        $this->call(CreateAnggotaSeeder::class);
+        $this->call(CreateNilaiSeeder::class);
+        $this->call(CreateJadwalSeeder::class);
     }
 }

@@ -38,4 +38,5 @@ class CreateAnggotasTable extends Migration
     {
         Schema::dropIfExists('anggotas');
     }
+    
 }

@@ -15,6 +15,8 @@
     {{-- customize css --}}
     <link rel="stylesheet" href="/css/app.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/sl-1.3.3/datatables.min.css"/>
+
     <style>
         main > .container {
             padding: 30px 15px 60px 0px;
@@ -34,22 +36,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href={{route('admin.anggota',12)}}>Daftar Anggota</a>
+                        <a class="nav-link" href={{route('admin.anggota',0)}}>Daftar Anggota</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Jadwal Latihan</a>
+                        <a class="nav-link" href={{route('admin.jadwal')}}>Jadwal Latihan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href={{route('admin.pelatih')}}>Daftar Nama Pelatih</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hasil Penilaian</a>
+                        <a class="nav-link" href={{route('admin.nilai')}}>Hasil Penilaian</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                        <a class="nav-link" href="">{{ Auth::user()->name }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -72,8 +74,15 @@
     </main>
 
 
-    <script src="/bootstrap-5.0.1/popper.min.js"></script>
-    <script src="/bootstrap-5.0.1/js/bootstrap.min.js"></script>
+    {{-- <script src="/bootstrap-5.0.1/popper.min.js"></script>
+    <script src="/bootstrap-5.0.1/js/bootstrap.min.js"></script>  --}}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.25/sl-1.3.3/datatables.min.js"></script>
+
+    @stack('script')
 </body>
 </html>
 

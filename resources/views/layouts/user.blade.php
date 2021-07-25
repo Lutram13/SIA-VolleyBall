@@ -14,6 +14,15 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+    
+    {{-- customize css --}}
+    <link rel="stylesheet" href="/css/app.css">
+
+    <style>
+        main > .container {
+            padding: 30px 15px 60px 0px;
+            }
+    </style>
 </head>
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -80,14 +89,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href={{route('user.jadwal',0)}}>
                                 <i class="bi bi-clipboard"></i>
                                 Jadwal Latihan
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href={{route('user.pelatih')}}>
                                 <i class="bi bi-people-fill"></i>
                                 Daftar Nama Pelatih
                             </a>
@@ -99,9 +108,9 @@
                                     Hasil Penilaian
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="#">Usia 12 Tahun</a></li>
-                                  <li><a class="dropdown-item" href="#">Usia 15 Tahun</a></li>
-                                  <li><a class="dropdown-item" href="#">Usia 17 Tahun</a></li>
+                                  <li><a class="dropdown-item" href={{route('user.nilai',12)}}>Usia 12 Tahun</a></li>
+                                  <li><a class="dropdown-item" href={{route('user.nilai',15)}}>Usia 15 Tahun</a></li>
+                                  <li><a class="dropdown-item" href={{route('user.nilai',17)}}>Usia 17 Tahun</a></li>
                                 </ul>
                             </div>
                         </li>                     

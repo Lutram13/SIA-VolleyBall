@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Nilai;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Anggota extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     
     protected $fillable = [
         'nama',
@@ -20,4 +23,9 @@ class Anggota extends Model
         'beratBadan',
         'kelompokUsia',
     ];
+    
+    public function nilai()
+    {
+        return $this->hasMany(Nilai::class);
+    }
 }

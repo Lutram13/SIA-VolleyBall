@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Jadwal;
 
 class Pelatih extends Model
 {
@@ -18,4 +19,9 @@ class Pelatih extends Model
         'kelompokUsia',
         'image',    
     ];
+    
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }

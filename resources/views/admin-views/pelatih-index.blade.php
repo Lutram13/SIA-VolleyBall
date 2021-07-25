@@ -4,21 +4,22 @@
 
     @if ($message = Session::get('sukses'))
     <div class="alert alert-success d-flex align-items-center" role="alert">
-        {{$message}}  
+        <p>{{$message}}</p>    
     </div>
     @endif
 
     @if ($message = Session::get('gagal'))    
     <div class="alert alert-danger d-flex align-items-center" role="alert">
-        {{$message}}
+        <p>Data <strong>GAGAL</strong> diinputkan : <strong>{{ $message }}</strong>. </p>
     </div>
     @endif
 
     @if ($message = Session::get('peringatan'))  
     <div class="alert alert-warning d-flex align-items-center" role="alert">
-        {{$message}}     
+        <p>Terjadi kesalahan : <strong>{{ $message }}</strong>. </p>            
     </div>
     @endif
+
 
 <div class="card">
     <div class="card-header">

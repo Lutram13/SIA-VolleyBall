@@ -4,7 +4,7 @@
 
     @if ($message = Session::get('sukses'))
     <div class="alert alert-success d-flex align-items-center" role="alert">
-        <p>Pendaftaran atas nama <strong>{{$message}}</strong> telah <strong>BERHASIL</strong> dilakukan.</p>    
+        <p>Pendaftaran atas nama <strong>{{$message}}</strong></p>    
     </div>
     @endif
 
